@@ -5,7 +5,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Etc/UTC
+      - TZ=America/Los_Angeles
     volumes:
       - /path/to/dokuwiki/config:/config
     ports:
