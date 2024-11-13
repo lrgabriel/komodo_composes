@@ -3,12 +3,14 @@ services:
     image: lscr.io/linuxserver/duplicati:latest
     container_name: duplicati
     environment:
+      - PUID=1000
+      - PGID=1000
       - TZ=America/Los_Angeles
       - CLI_ARGS= #optional
     volumes:
       - /root/duplicati/config:/config
       - /root/duplicati/backups:/backups
-      - /root/:/source
+      - /root/forgejo:/forgejo
     ports:
       - 8200:8200
     restart: unless-stopped
