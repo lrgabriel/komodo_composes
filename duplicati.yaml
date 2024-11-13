@@ -5,12 +5,12 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Etc/UTC
+      - TZ=America/Los_Angeles
       - CLI_ARGS= #optional
     volumes:
-      - /path/to/appdata/config:/config
-      - /path/to/backups:/backups
-      - /path/to/source:/source
+      - /root/duplicati/config:/config
+      - /root/duplicati/backups:/backups
+      - /root/:/source
     ports:
       - 8200:8200
     restart: unless-stopped
